@@ -1,5 +1,4 @@
 
-
 terraform {
   required_providers {
     azurerm = {
@@ -11,5 +10,5 @@ terraform {
 
 provider "azurerm" {
   features {}
-  subscription_id = "1075ec7a-b17a-4f37-bf3f-9d68c4506dc1"
+  subscription_id = "2c279754-9ded-4271-a952-14fe81a08ff4"
 }
