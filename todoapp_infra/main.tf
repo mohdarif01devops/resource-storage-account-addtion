@@ -1,14 +1,3 @@
-# Kachara Code - Ye code sirf samajhne ke lie hai, production mein use mat karna!
-# I am dhondhu no 1. 
-# Ek din, ek DevOps engineer ne socha ki chalo ek todo app banate hain Azure par.
-# Usne sabse pehle ek resource group banaya, taki saare resources ek jagah par rahe.
-# Phir ek virtual network banaya, taki networking ka jugaad ho sake.
-# Frontend aur backend ke liye alag-alag subnets banaye, taki security aur segregation ho.
-# Public IP banaya, taki frontend VM ko duniya dekh sake.
-# Key Vault banaya, taki secrets safe rahe.
-# Fir, ek VM banayi frontend ke liye, jisme username aur password Key Vault se liya.
-# Aage chal kar, backend VM aur SQL server bhi banane ka plan hai.
-# Is tarah, DevOps engineer ne infrastructure ko code ki madad se automate kar diya.
 
 module "resource_group" {
   source                  = "../modules/azurerm_resource_group"
