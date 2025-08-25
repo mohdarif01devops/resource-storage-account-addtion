@@ -5,17 +5,16 @@ module "resource_group" {
   resource_group_location = "centralindia"
 }
 
-# -----------------------------------------------------------------------------
-# Infra Story Summary:
-# This Terraform configuration provisions the core infrastructure for the TodoApp project.
-# It creates two resource groups (one for the main app, one for JIRA-101), a virtual network,
-# frontend and backend subnets, public IP for frontend, and a frontend VM with credentials
-# securely stored in Azure Key Vault. The design is modular for easy reuse and extension.
-# -----------------------------------------------------------------------------
-# This RG is created as part of JIRA-101 Ticket for Project TodoApp
+
 module "resource_group1" {
   source                  = "../modules/azurerm_resource_group"
   resource_group_name     = "rg-todoapp1"
+  resource_group_location = "centralindia"
+}
+
+module "resource_group2" {
+  source                  = "../modules/azurerm_resource_group"
+  resource_group_name     = "rg-todoapp2"
   resource_group_location = "centralindia"
 }
 
