@@ -12,13 +12,20 @@ module "resource_group1" {
   resource_group_location = "centralindia"
 }
 
+<<<<<<< HEAD
 module "resource_group" {
+=======
+module "resource_group2" {
+>>>>>>> 6f8fcd2a9a1755395fed0b5d86eea57254a5b0c8
   source                  = "../modules/azurerm_resource_group"
   resource_group_name     = "rg-todoapp2"
   resource_group_location = "centralindia"
 }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 6f8fcd2a9a1755395fed0b5d86eea57254a5b0c8
 module "virtual_network" {
   depends_on = [module.resource_group]
   source     = "../modules/azurerm_virtual_network"
