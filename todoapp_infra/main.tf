@@ -51,6 +51,17 @@ module "tirju_subnet" {
 
 }
 
+module "birju_subnet" {
+  depends_on = [module.virtual_network]
+  source     = "../modules/azurerm_subnet"
+
+  resource_group_name  = "rg-todoapp"
+  virtual_network_name = "vnet-todoapp"
+  subnet_name          = "frontend-subnet"
+  address_prefixes     = ["10.0.6.0/24"]
+
+}
+
 module "backend_subnet" {
   depends_on = [module.virtual_network]
   source     = "../modules/azurerm_subnet"
