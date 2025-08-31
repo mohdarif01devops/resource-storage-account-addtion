@@ -1,0 +1,7 @@
+name: "Mera Pahla Workflow"
+on:
+  push:
+    branches:
+      - main
+      - 'releases/**'
+  
