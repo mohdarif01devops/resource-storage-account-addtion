@@ -12,5 +12,6 @@ jobs:
     runs-on: MOHDs-MacBook-Air
     steps:
     - name: Dhondhu Mahraj Rocks !
-      run: echo dhondhoo Mahraj  
+      run: echo dhondhoo Mahraj 
+      run: echo dhondhoo21 Mahraj  
   
