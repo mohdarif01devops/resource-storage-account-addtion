@@ -9,7 +9,7 @@ on:
 jobs:
   DhondhuMahraj:
     name: Dhondhu Mahraj
-    runs-on: MOHDs-MacBook-Air
+    runs-on: self-hosted
     steps:
     - name: Dhondhu Mahraj Rocks !
       run: echo dhondhoo Mahraj 
