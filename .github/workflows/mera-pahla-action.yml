@@ -13,5 +13,7 @@ jobs:
     steps:
     - name: Dhondhu Mahraj Rocks !
       run: echo dhondhoo Mahraj 
-      run: echo dhondhoo21 Mahraj  
+
+    - name: rondo Mahraj Rocks !
+      run: echo roondhoo Mahraj 
   
