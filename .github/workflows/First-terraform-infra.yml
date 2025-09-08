@@ -1,0 +1,10 @@
+name: 'First Terraform Infra'
+on: workflow_dispatch
+
+jobs:
+  
+  terraform-jobs:
+  
+    runs-on: ubuntu-latest
+    
+  
