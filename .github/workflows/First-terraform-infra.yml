@@ -1,14 +1,14 @@
 name: 'First Terraform Infra'
+
 on: workflow_dispatch
 
 jobs:
   
   terraform-jobs:
-  
-    runs-on: dhondhu-mahraj
+    runs-on: self-hosted
     steps:
-    - name: Checkout
-      uses: actions/checkout@v5.0.0
+      - name: Checkout
+        uses: actions/checkout@v5.0.0
 
   
 
