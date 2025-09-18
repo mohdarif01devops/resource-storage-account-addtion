@@ -15,7 +15,7 @@ jobs:
         backendServiceArm: 'ferji-connectiom'
         backendAzureRmStorageAccountName: 'ferjistorageacoount'
         backendAzureRmContainerName: 'farji-container'
-        backendAzureRmKey: 'terraform.tfstate'
+        backendAzureRmKey: '  '
 
  - job: terraformplan
    displayName: 'terraformPlanStage'
