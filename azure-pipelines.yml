@@ -3,11 +3,33 @@ trigger: none
 
 pool: New-Ferji-pool
 
-steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
+jobs:
+ - job: terraforminit
+   steps: 
+    - task: TerraformTask@5
+      inputs:
+        provider: 'azurerm'
+        command: 'init'
+        workingDirectory: '$(System.DefaultWorkingDirectory)/todoapp_infra'
+        backendServiceArm: 'ferji-connectiom'
+        backendAzureRmStorageAccountName: 'ferjistorageacoount'
+        backendAzureRmContainerName: 'farji-container'
+        backendAzureRmKey: 'terraform.tfstate'
 
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+ - job: terraformplan
+   steps:
+    - task: TerraformTask@5
+      inputs:
+        provider: 'azurerm'
+        command: 'plan'
+        workingDirectory: '$(System.DefaultWorkingDirectory)/todoapp_infra'
+        environmentServiceNameAzureRM: 'ferji-connectiom'
+
+ - job: terraformapply
+   steps:
+    - task: TerraformTask@5
+      inputs:
+        provider: 'azurerm'
+        command: 'apply'
+        workingDirectory: '$(System.DefaultWorkingDirectory)todoapp_infra'
+        environmentServiceNameAzureRM: 'ferji-connectiom'
