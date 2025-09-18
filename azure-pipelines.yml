@@ -1,4 +1,4 @@
-
+––
 trigger: none
 
 pool: New-Ferji-pool
@@ -30,7 +30,7 @@ jobs:
 
  - job: terraformapply
    displayName: 'terraformPlanStage'
-   dependsOn: terraforminit
+   dependsOn: terraformplan
    steps:
     - task: TerraformTask@5
       inputs:
