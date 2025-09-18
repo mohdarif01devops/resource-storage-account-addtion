@@ -5,6 +5,7 @@ pool: New-Ferji-pool
 
 jobs:
  - job: terraforminit
+   displayName: 'terrafromInitStage'
    steps: 
     - task: TerraformTask@5
       inputs:
@@ -17,6 +18,8 @@ jobs:
         backendAzureRmKey: 'terraform.tfstate'
 
  - job: terraformplan
+   displayName: 'terraformPlanStage'
+   dependsOn: terraforminit
    steps:
     - task: TerraformTask@5
       inputs:
@@ -26,6 +29,8 @@ jobs:
         environmentServiceNameAzureRM: 'ferji-connectiom'
 
  - job: terraformapply
+   displayName: 'terraformPlanStage'
+   dependsOn: terraforminit
    steps:
     - task: TerraformTask@5
       inputs:
