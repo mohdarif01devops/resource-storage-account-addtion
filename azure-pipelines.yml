@@ -21,6 +21,16 @@ jobs:
    displayName: 'terraformPlanStage'
    dependsOn: terraforminit
    steps:
+
+    - task: TerraformTask@5
+      inputs:
+          provider: 'azurerm'
+          command: 'init'
+          workingDirectory: '$(System.DefaultWorkingDirectory)/todoapp_infra'
+          backendServiceArm: 'ferji-connectiom'
+          backendAzureRmStorageAccountName: 'ferjistorageacoount'
+          backendAzureRmContainerName: 'farji-container'
+          backendAzureRmKey: 'terraform.tfstate'
     - task: TerraformTask@5
       inputs:
         provider: 'azurerm'
@@ -29,9 +39,18 @@ jobs:
         environmentServiceNameAzureRM: 'ferji-connectiom'
 
  - job: terraformapply
-   displayName: 'terraformPlanStage'
+   displayName: 'terraformApplyStage'
    dependsOn: terraformplan
    steps:
+    - task: TerraformTask@5
+      inputs:
+          provider: 'azurerm'
+          command: 'init'
+          workingDirectory: '$(System.DefaultWorkingDirectory)/todoapp_infra'
+          backendServiceArm: 'ferji-connectiom'
+          backendAzureRmStorageAccountName: 'ferjistorageacoount'
+          backendAzureRmContainerName: 'farji-container'
+          backendAzureRmKey: 'terraform.tfstate'
     - task: TerraformTask@5
       inputs:
         provider: 'azurerm'
